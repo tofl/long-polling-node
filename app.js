@@ -14,11 +14,11 @@ http.createServer(function(request, response) {
         fs.readFile('./index.html', function (error, data) {
             response.end(data);
         });
-    } else if (url_parts.pathname.substr(0, 5) == '/poll') {
+    } else if (url_parts.pathname.substr(0, 5) == '/poll') { // Request by the client
         var count = url_parts.pathname.replace(/[^0-9]*/, '');
         console.log("Current count by the client (browser) : " + count);
 
-        if (messages.length > count) {
+        if (messages.length > count) { // If there's a new message (the client doesn't know about yet)
             response.end(JSON.stringify({
                 count: messages.length,
                 append: messages.slice(count).join("\n") + "\n"
