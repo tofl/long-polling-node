@@ -43,33 +43,3 @@ http.createServer(function(request, response) {
 }).listen(3000, 'localhost');
 console.log('Server running');
 console.log('------------------------------------');
-
-
-
-
-
-
-
-/*
-const express = require('express');
-const app = express();
-
-app.set('view engine', 'ejs');
-app.use('/assets', express.static('assets'));
-
-app.get('/', function(req, res) {
-    res.render('index');
-});
-
-app.get('/contact', function(req, res) {
-    res.render('contact', req.query);
-});
-
-app.get('/profile/:name', function(req, res) {
-    const data = {age: 29, job: 'ninja', hobbies: ['eating', 'fighting', 'fishing', 'fucking']};
-    res.render('profile', {person: req.params.name, data: data});
-});
-
-app.listen(3000);
-
-*/
